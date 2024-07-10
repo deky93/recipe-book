@@ -1,0 +1,19 @@
+
+.navbar-default .navbar-nav>.active>a {
+    color: #05c5e7;
+    background-color: #e7e7e7;
+}
+
+.collapse:not(.show) {
+    display: none;
+}
+
+/* .navbar-default .navbar-nav>.active>a:focus {
+    color: #a3e705;
+    background-color: #e7e7e7;
+}
+
+.navbar-default .navbar-nav>.active>a:hover {
+    color: #ed1e1e;
+    background-color: #e7e7e7;
+} */

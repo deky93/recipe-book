@@ -1,0 +1,22 @@
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+
+.m-b-recipe-edit{
+    margin-bottom: 20px;
+}
+
+label{
+    padding-bottom: 8px;
+}
+
+.delete-ingredient{
+    font-size: 15px;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}

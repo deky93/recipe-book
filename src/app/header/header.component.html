@@ -1,0 +1,93 @@
+<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary" style="position: fixed; z-index: 1000; width: 100vw;top: 0px;">
+    <div class="container-fluid" >
+        <div class="navbar-header">
+            <img src="assets/recipe-book.png" alt="" width="50" height="50">
+            <a href="#" class="navbar-brand" style="margin-left: 40px;">Recipe book</a>
+        </div>
+        <div class="navbar-default">
+            <ul class="nav navbar-nav">
+                <li routerLinkActive="active"> <a routerLink="/recipes" *ngIf="isAuthenticated">Recipes</a></li>
+                <li routerLinkActive="active"><a routerLink="/auth" *ngIf="!isAuthenticated">Authenticate</a></li>
+                <li routerLinkActive="active"><a routerLink="/shopping-list">Shopping list</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li *ngIf="isAuthenticated">
+                    <a style="cursor: pointer;" (click)="onLogOut()">Logout</a>
+                </li>
+                <li class="dropdown" appDropdown *ngIf="isAuthenticated">
+                    <a style="cursor: pointer;"class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li style="cursor: pointer;" (click)="onSaveRecipes()"> <a>Save data</a></li>
+                        <li style="cursor: pointer;" (click)="onFetchRecipes()"><a>Fetch data</a></li>  
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav> -->
+
+
+<nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+      <img src="assets/recipe-book.png" alt="" width="50" height="50">
+      <a href="#" class="navbar-brand" style="margin-left: 20px;">Recipe book</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="nav nav-underline navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: 4%;">
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" aria-current="page" routerLink="/recipes" *ngIf="isAuthenticated">Recipes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="/auth" *ngIf="!isAuthenticated">Authenticate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="/shopping-list">Shopping list</a>
+          </li>
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li> -->
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="nav-item" *ngIf="isAuthenticated">
+              <a class="nav-link" style="cursor: pointer;" (click)="onLogOut()">Logout</a>
+          </li>
+          <!-- appDropdown -->
+          <!-- <li class="dropdown"    *ngIf="isAuthenticated">
+              <a style="cursor: pointer;"class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                  <li style="cursor: pointer;" (click)="onSaveRecipes()"> <a>Save data</a></li>
+                  <li style="cursor: pointer;" (click)="onFetchRecipes()"><a>Fetch data</a></li>  
+              </ul>
+          </li> -->
+          <li class="nav-item dropdown" *ngIf="isAuthenticated">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Manage
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li style="cursor: pointer;" (click)="onSaveRecipes()"><a class="dropdown-item">Save data</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li style="cursor: pointer;" (click)="onFetchRecipes()"><a class="dropdown-item">Fetch data</a></li>
+            </ul>
+          </li>
+      </ul>
+        <!-- <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form> -->
+      </div>
+    </div>
+  </nav>
