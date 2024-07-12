@@ -1,5 +1,5 @@
 import { Component, ComponentFactoryResolver, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { AuthResponseData, AuthService } from './auth.service';
 import { Observable, Subscription } from 'rxjs';
 import { Router } from '@angular/router';
@@ -19,11 +19,15 @@ export class AuthComponent implements OnInit,OnDestroy {
   isLoginMode = true;
   isLoading = false;
   error:string=null;
-  
+  email:string="dejantest@test.com";
+  password:string="123456789";
 
-  constructor(private authService: AuthService,private router:Router, private componentFactoryResolver: ComponentFactoryResolver) { }
+  constructor(private authService: AuthService,private router:Router, private componentFactoryResolver: ComponentFactoryResolver) { 
+    
+  }
 
   ngOnInit(): void {
+    
   }
 
   onSwitchMode(){
@@ -42,6 +46,9 @@ export class AuthComponent implements OnInit,OnDestroy {
     }
     const email = form.value.email;
     const password = form.value.password;
+    console.log(email);
+    console.log(password);
+    
 
     let authObs:Observable<AuthResponseData>;
 
