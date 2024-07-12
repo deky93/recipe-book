@@ -39,4 +39,4 @@ Steps for publishing and updating app on server
 
 
 
- //"polyfills": ["zone.js"], in angular.json
+ "polyfills": ["zone.js"], in angular.json
